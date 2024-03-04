@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <materials>
-  <cross_sections>\Users\Jeppe\OneDrive - Aarhus Universitet\Dokumenter\ My Documents\Universitet\8. semester\Reaktorfysik\RFP\Ny mappe\jeff-3.3-hdf5\cross_sections.xml</cross_sections>
+  <cross_sections>/root/Jeppe/jeff-3.3-hdf5/cross_sections.xml</cross_sections>
   <material depletable="true" id="1" name="uo2" temperature="1200">
     <density units="g/cm3" value="10.5"/>
     <nuclide ao="0.04" name="U235"/>
