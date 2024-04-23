@@ -2,13 +2,13 @@
 <model>
   <materials>
     <cross_sections>/root/jeff-3.3-hdf5/cross_sections.xml</cross_sections>
-    <material depletable="true" id="1000" name="uo2" temperature="1200">
+    <material depletable="true" id="406" name="uo2" temperature="1200">
       <density units="g/cm3" value="10.5"/>
       <nuclide ao="0.04" name="U235"/>
       <nuclide ao="0.96" name="U238"/>
       <nuclide ao="2.0" name="O16"/>
     </material>
-    <material id="1001" name="zirconium" temperature="900">
+    <material id="407" name="zirconium" temperature="900">
       <density units="g/cm3" value="6.6"/>
       <nuclide ao="0.5145" name="Zr90"/>
       <nuclide ao="0.1122" name="Zr91"/>
@@ -16,7 +16,7 @@
       <nuclide ao="0.1738" name="Zr94"/>
       <nuclide ao="0.028" name="Zr96"/>
     </material>
-    <material id="1002" name="h2o">
+    <material id="408" name="h2o">
       <density units="g/cm3" value="0.74"/>
       <nuclide ao="2.0" name="H1"/>
       <nuclide ao="1.0" name="O16"/>
@@ -24,17 +24,17 @@
     </material>
   </materials>
   <geometry>
-    <cell id="1325" material="1000" name="fuel" region="-2318" universe="332"/>
-    <cell id="1326" material="void" name="air gap" region="2318 -2319" universe="332"/>
-    <cell id="1327" material="1001" name="clad" region="2319 -2320" universe="332"/>
-    <cell id="1328" material="1002" name="moderator" region="2321 -2322 2323 -2324 2320" universe="332"/>
-    <surface coeffs="0.0 0.0 0.41" id="2318" type="z-cylinder"/>
-    <surface coeffs="0.0 0.0 0.42" id="2319" type="z-cylinder"/>
-    <surface coeffs="0.0 0.0 0.45" id="2320" type="z-cylinder"/>
-    <surface boundary="reflective" coeffs="-1.475" id="2321" type="x-plane"/>
-    <surface boundary="reflective" coeffs="1.475" id="2322" type="x-plane"/>
-    <surface boundary="reflective" coeffs="-1.475" id="2323" type="y-plane"/>
-    <surface boundary="reflective" coeffs="1.475" id="2324" type="y-plane"/>
+    <cell id="541" material="406" name="fuel" region="-946" universe="136"/>
+    <cell id="542" material="void" name="air gap" region="946 -947" universe="136"/>
+    <cell id="543" material="407" name="clad" region="947 -948" universe="136"/>
+    <cell id="544" material="408" name="moderator" region="949 -950 951 -952 948" universe="136"/>
+    <surface coeffs="0.0 0.0 0.41" id="946" type="z-cylinder"/>
+    <surface coeffs="0.0 0.0 0.42" id="947" type="z-cylinder"/>
+    <surface coeffs="0.0 0.0 0.45" id="948" type="z-cylinder"/>
+    <surface boundary="reflective" coeffs="-1.475" id="949" type="x-plane"/>
+    <surface boundary="reflective" coeffs="1.475" id="950" type="x-plane"/>
+    <surface boundary="reflective" coeffs="-1.475" id="951" type="y-plane"/>
+    <surface boundary="reflective" coeffs="1.475" id="952" type="y-plane"/>
   </geometry>
   <settings>
     <run_mode>eigenvalue</run_mode>
@@ -51,21 +51,21 @@
     </output>
   </settings>
   <tallies>
-    <filter id="320" type="cell">
-      <bins>1325</bins>
+    <filter id="191" type="cell">
+      <bins>541</bins>
     </filter>
-    <filter id="319" type="energy">
+    <filter id="190" type="energy">
       <bins>0.0 0.5170399957287 20000000.0</bins>
     </filter>
-    <filter id="321" type="cell">
-      <bins>1328</bins>
+    <filter id="192" type="cell">
+      <bins>544</bins>
     </filter>
     <tally id="1">
-      <filters>320 319</filters>
+      <filters>191 190</filters>
       <scores>absorption nu-fission</scores>
     </tally>
     <tally id="2">
-      <filters>321 319</filters>
+      <filters>192 190</filters>
       <scores>absorption</scores>
     </tally>
   </tallies>
